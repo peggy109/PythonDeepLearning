@@ -15,16 +15,21 @@ print "test labels dtype :",test_labels.dtype
 print "len of train labels :",len(train_labels)
 print "len of test labels :",len(test_labels)
 print "test labels :",test_labels
+
 aslice=train_images[10:12,0:5,0:5]
-print "slice shape : ",aslice.shape
+print "slice([10:12,0:5,0:5]) shape : ",aslice.shape
 print "slice : ",aslice
 little_slice = aslice[0:2,0:2,0:2]
-print "little slice : ",little_slice
+print "little slice([0:2,0:2,0:2]) : ",little_slice
 
 digit = train_images[4]
+print "before plt.show"
+import matplotlib as mpl
+mpl.use("Agg")
 import matplotlib.pyplot as plt
 plt.imshow(digit,cmap=plt.cm.binary)
 plt.show()
+print "after plt.show"
 
 from keras import models
 from keras import layers
